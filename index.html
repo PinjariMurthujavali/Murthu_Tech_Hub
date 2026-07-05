@@ -192,10 +192,10 @@
     <nav>
       <a class="logo" data-route="home" href="#home"><div class="logo-mark">M</div>Murthu<span style="color:var(--text-dim); font-weight:500;">TechHub</span></a>
       <div class="navlinks">
-        <a data-route="home" href="#home">Courses</a>
+        <a data-route="courses" href="#courses">Courses</a>
         <a data-route="dashboard" href="#dashboard">My dashboard</a>
-        <a href="#home">Roadmaps</a>
-        <a href="#home">Community</a>
+        <a href="#courses">Roadmaps</a>
+        <a href="#courses">Community</a>
       </div>
       <div class="navcta">
         <button class="theme-toggle" id="themeToggle">🌙</button>
@@ -228,7 +228,7 @@ document.getElementById('themeToggle').addEventListener('click', () => {
 /* ---------------- data ---------------- */
 const courseCatalog = {
   'dsa-python': {
-    title:'DSA Mastery in Python', level:'Beginner', hours:'20h 10m', enrolled:'18,204',
+    title:'DSA Mastery in Python', category:'Programming', level:'Beginner', hours:'20h 10m', enrolled:'18,204',
     instructor:'Arjun Kaushik', instructorInit:'AK', instructorGrad:'linear-gradient(135deg,#2563EB,#7C3AED)',
     thumbGrad:'linear-gradient(135deg,#0E7490,#2563EB)',
     desc:'Every core data structure and algorithm, taught with the exact problems companies actually ask — arrays through graphs, with 300+ practice problems along the way.',
@@ -256,7 +256,7 @@ const courseCatalog = {
     ]
   },
   'agentic-ai': {
-    title:'Agentic AI with LangChain & MCP', level:'Intermediate', hours:'12h 40m', enrolled:'9,842',
+    title:'Agentic AI with LangChain & MCP', category:'AI', level:'Intermediate', hours:'12h 40m', enrolled:'9,842',
     instructor:'Sneha Rao', instructorInit:'SR', instructorGrad:'linear-gradient(135deg,#7C3AED,#06B6D4)',
     thumbGrad:'linear-gradient(135deg,#1E3A8A,#7C3AED)',
     desc:'Build autonomous agents that call tools and reason step by step — RAG, MCP, and multi-agent orchestration from first principles.',
@@ -276,7 +276,7 @@ const courseCatalog = {
     ]
   },
   'k8s-prod': {
-    title:'Kubernetes for Production', level:'Advanced', hours:'9h 55m', enrolled:'6,110',
+    title:'Kubernetes for Production', category:'Cloud', level:'Advanced', hours:'9h 55m', enrolled:'6,110',
     instructor:'Rahul Nair', instructorInit:'RN', instructorGrad:'linear-gradient(135deg,#065F46,#0E7490)',
     thumbGrad:'linear-gradient(135deg,#065F46,#0E7490)',
     desc:'Deployments, scaling, observability and real cluster labs — the operational side of Kubernetes nobody covers in intro tutorials.',
@@ -292,6 +292,170 @@ const courseCatalog = {
     ],
     reviews:[
       { name:'Vikram Chowdhury', stars:5, verified:true, text:'The autoscaling module alone saved us from a production incident two weeks after I took it.' }
+    ]
+  },
+  'python-fundamentals': {
+    title:'Python Programming Fundamentals', category:'Programming', level:'Beginner', hours:'14h 20m', enrolled:'24,510',
+    instructor:'Meera Joshi', instructorInit:'MJ', instructorGrad:'linear-gradient(135deg,#2563EB,#06B6D4)',
+    thumbGrad:'linear-gradient(135deg,#2563EB,#06B6D4)',
+    desc:'Variables to functions to file handling — the complete beginner path into Python, with a project at the end of every module.',
+    modules:[
+      { title:'Getting started', lessons:[
+        { id:'p1', name:'Setting up Python and your first script', time:'10m', html:`<span class="lesson-eyebrow">Module 1 · Getting started</span><h2>Setting up Python and your first script</h2><p>Install Python, run your first script, and understand what actually happens when you hit "run".</p>` },
+        { id:'p2', name:'Variables, types, and operators', time:'16m', html:`<span class="lesson-eyebrow">Module 1 · Getting started</span><h2>Variables, types, and operators</h2><p>Every value in Python has a type — see how that shapes what operators do to it.</p>` }
+      ]},
+      { title:'Control flow & functions', lessons:[
+        { id:'p3', name:'If/else and loops', time:'18m', html:`<span class="lesson-eyebrow">Module 2 · Control flow & functions</span><h2>If/else and loops</h2><p>Branch and repeat — the two building blocks every program is made of.</p>` },
+        { id:'p4', name:'Writing reusable functions', time:'20m', html:`<span class="lesson-eyebrow">Module 2 · Control flow & functions</span><h2>Writing reusable functions</h2><p>Turn repeated code into functions with clear inputs and outputs.</p>` }
+      ]}
+    ],
+    reviews:[
+      { name:'Aditya Rao', stars:5, verified:true, text:'Best paced beginner Python course I have tried — never felt rushed or condescending.' },
+      { name:'Sneha Pillai', stars:5, verified:true, text:'The project at the end of each module made the difference. I actually retained it.' }
+    ]
+  },
+  'java-beginners': {
+    title:'Java for Beginners', category:'Programming', level:'Beginner', hours:'16h 05m', enrolled:'15,332',
+    instructor:'Vivek Menon', instructorInit:'VM', instructorGrad:'linear-gradient(135deg,#7C3AED,#2563EB)',
+    thumbGrad:'linear-gradient(135deg,#7C3AED,#2563EB)',
+    desc:'Object-oriented programming done right — classes, interfaces, and the JVM concepts that show up in every Java interview.',
+    modules:[
+      { title:'Java basics', lessons:[
+        { id:'j1', name:'JVM, JDK, and your first class', time:'12m', html:`<span class="lesson-eyebrow">Module 1 · Java basics</span><h2>JVM, JDK, and your first class</h2><p>What actually runs your code, and why Java compiles to bytecode instead of machine code.</p>` },
+        { id:'j2', name:'Classes and objects', time:'19m', html:`<span class="lesson-eyebrow">Module 1 · Java basics</span><h2>Classes and objects</h2><p>Model a real-world entity as a class, then create and use objects from it.</p>` }
+      ]},
+      { title:'OOP in depth', lessons:[
+        { id:'j3', name:'Inheritance and interfaces', time:'22m', html:`<span class="lesson-eyebrow">Module 2 · OOP in depth</span><h2>Inheritance and interfaces</h2><p>When to extend a class versus implement an interface — with a design you can reuse.</p>` }
+      ]}
+    ],
+    reviews:[
+      { name:'Rohit Bhatt', stars:4, verified:true, text:'Clear explanations of interfaces vs abstract classes — that always confused me before.' }
+    ]
+  },
+  'js-ts-essentials': {
+    title:'JavaScript & TypeScript Essentials', category:'Programming', level:'Intermediate', hours:'13h 45m', enrolled:'11,204',
+    instructor:'Ananya Desai', instructorInit:'AD', instructorGrad:'linear-gradient(135deg,#06B6D4,#2563EB)',
+    thumbGrad:'linear-gradient(135deg,#06B6D4,#2563EB)',
+    desc:'Modern JavaScript, then TypeScript on top of it — closures, async/await, and the type system that catches bugs before runtime.',
+    modules:[
+      { title:'Modern JavaScript', lessons:[
+        { id:'t1', name:'Closures and scope', time:'17m', html:`<span class="lesson-eyebrow">Module 1 · Modern JavaScript</span><h2>Closures and scope</h2><p>Why a function can "remember" variables from where it was created — with three practical use cases.</p>` },
+        { id:'t2', name:'Async/await and promises', time:'21m', html:`<span class="lesson-eyebrow">Module 1 · Modern JavaScript</span><h2>Async/await and promises</h2><p>Read asynchronous code top to bottom without callback nesting.</p>` }
+      ]},
+      { title:'TypeScript', lessons:[
+        { id:'t3', name:'Types, interfaces, and generics', time:'23m', html:`<span class="lesson-eyebrow">Module 2 · TypeScript</span><h2>Types, interfaces, and generics</h2><p>Add just enough typing to catch real bugs, without fighting the compiler.</p>` }
+      ]}
+    ],
+    reviews:[
+      { name:'Farhan Ali', stars:5, verified:true, text:'The closures explanation finally made it click after years of just copying patterns.' },
+      { name:'Kavya Suresh', stars:4, verified:false, text:'Good course, would like a follow-up on advanced generics.' }
+    ]
+  },
+  'system-design': {
+    title:'System Design Interview Prep', category:'Programming', level:'Advanced', hours:'15h 30m', enrolled:'19,870',
+    instructor:'Arjun Kaushik', instructorInit:'AK', instructorGrad:'linear-gradient(135deg,#2563EB,#7C3AED)',
+    thumbGrad:'linear-gradient(135deg,#1E3A8A,#2563EB)',
+    desc:'Design a URL shortener, a chat app, and a news feed from scratch — the exact questions asked at product companies, with trade-offs explained.',
+    modules:[
+      { title:'Core concepts', lessons:[
+        { id:'s1', name:'Scaling reads vs writes', time:'20m', html:`<span class="lesson-eyebrow">Module 1 · Core concepts</span><h2>Scaling reads vs writes</h2><p>Most systems are read-heavy — see how caching and replicas change the design completely.</p>` },
+        { id:'s2', name:'Load balancing and sharding', time:'24m', html:`<span class="lesson-eyebrow">Module 1 · Core concepts</span><h2>Load balancing and sharding</h2><p>Split traffic and data across machines without losing consistency guarantees you actually need.</p>` }
+      ]},
+      { title:'Mock designs', lessons:[
+        { id:'s3', name:'Design a URL shortener', time:'28m', html:`<span class="lesson-eyebrow">Module 2 · Mock designs</span><h2>Design a URL shortener</h2><p>Walk through the full interview: requirements, estimation, high-level design, then deep dive.</p>` }
+      ]}
+    ],
+    reviews:[
+      { name:'Nisha Kapoor', stars:5, verified:true, text:'Cleared my system design round using almost exactly the URL shortener framework taught here.' }
+    ]
+  },
+  'ml-foundations': {
+    title:'Machine Learning Foundations', category:'AI', level:'Beginner', hours:'17h 15m', enrolled:'21,043',
+    instructor:'Sneha Rao', instructorInit:'SR', instructorGrad:'linear-gradient(135deg,#7C3AED,#06B6D4)',
+    thumbGrad:'linear-gradient(135deg,#7C3AED,#06B6D4)',
+    desc:'Regression to classification to evaluation metrics — the math made intuitive, with every model trained on real datasets, not toy examples.',
+    modules:[
+      { title:'Supervised learning', lessons:[
+        { id:'m1', name:'Linear regression from scratch', time:'19m', html:`<span class="lesson-eyebrow">Module 1 · Supervised learning</span><h2>Linear regression from scratch</h2><p>Implement gradient descent yourself before reaching for scikit-learn, so the library stops feeling like magic.</p>` },
+        { id:'m2', name:'Classification and decision boundaries', time:'22m', html:`<span class="lesson-eyebrow">Module 1 · Supervised learning</span><h2>Classification and decision boundaries</h2><p>Visualize how logistic regression and decision trees carve up the same dataset differently.</p>` }
+      ]},
+      { title:'Evaluation', lessons:[
+        { id:'m3', name:'Precision, recall, and when accuracy lies', time:'18m', html:`<span class="lesson-eyebrow">Module 2 · Evaluation</span><h2>Precision, recall, and when accuracy lies</h2><p>A 99% accurate model can still be useless — see exactly when and why.</p>` }
+      ]}
+    ],
+    reviews:[
+      { name:'Devika Nambiar', stars:5, verified:true, text:'Implementing gradient descent by hand before using sklearn changed how I understand every model since.' },
+      { name:'Yash Trivedi', stars:5, verified:true, text:'Precision/recall lesson should be mandatory before anyone ships an ML model.' }
+    ]
+  },
+  'deep-learning-pytorch': {
+    title:'Deep Learning with PyTorch', category:'AI', level:'Intermediate', hours:'19h 40m', enrolled:'13,590',
+    instructor:'Karan Malhotra', instructorInit:'KM', instructorGrad:'linear-gradient(135deg,#3C3489,#7C3AED)',
+    thumbGrad:'linear-gradient(135deg,#3C3489,#7C3AED)',
+    desc:'Tensors, autograd, and training your first neural network end to end — then CNNs for images and a transformer from first principles.',
+    modules:[
+      { title:'PyTorch basics', lessons:[
+        { id:'d1', name:'Tensors and autograd', time:'20m', html:`<span class="lesson-eyebrow">Module 1 · PyTorch basics</span><h2>Tensors and autograd</h2><p>See exactly how PyTorch computes gradients automatically, by tracing the computation graph yourself.</p>` },
+        { id:'d2', name:'Training your first network', time:'26m', html:`<span class="lesson-eyebrow">Module 1 · PyTorch basics</span><h2>Training your first network</h2><p>Forward pass, loss, backward pass, optimizer step — the loop every model training run follows.</p>` }
+      ]},
+      { title:'Architectures', lessons:[
+        { id:'d3', name:'Convolutional networks for images', time:'25m', html:`<span class="lesson-eyebrow">Module 2 · Architectures</span><h2>Convolutional networks for images</h2><p>Why convolutions work better than fully connected layers for images, shown with feature map visualizations.</p>` }
+      ]}
+    ],
+    reviews:[
+      { name:'Ishaan Verma', stars:4, verified:true, text:'Autograd finally makes sense. Wish there was a lesson on mixed precision training too.' }
+    ]
+  },
+  'aws-cloud-practitioner': {
+    title:'AWS Cloud Practitioner', category:'Cloud', level:'Beginner', hours:'11h 30m', enrolled:'22,415',
+    instructor:'Rahul Nair', instructorInit:'RN', instructorGrad:'linear-gradient(135deg,#065F46,#0E7490)',
+    thumbGrad:'linear-gradient(135deg,#0E7490,#065F46)',
+    desc:'EC2, S3, IAM, and the core AWS services — mapped directly to the official certification exam, with hands-on console labs.',
+    modules:[
+      { title:'Core services', lessons:[
+        { id:'w1', name:'EC2 and compute basics', time:'18m', html:`<span class="lesson-eyebrow">Module 1 · Core services</span><h2>EC2 and compute basics</h2><p>Launch your first instance and understand instance types, AMIs, and security groups.</p>` },
+        { id:'w2', name:'S3 storage and access policies', time:'16m', html:`<span class="lesson-eyebrow">Module 1 · Core services</span><h2>S3 storage and access policies</h2><p>Buckets, objects, and the IAM policies that decide who can read or write what.</p>` }
+      ]},
+      { title:'Exam readiness', lessons:[
+        { id:'w3', name:'IAM roles vs users vs policies', time:'20m', html:`<span class="lesson-eyebrow">Module 2 · Exam readiness</span><h2>IAM roles vs users vs policies</h2><p>The single most-tested concept on the exam, explained with a permissions diagram you'll actually remember.</p>` }
+      ]}
+    ],
+    reviews:[
+      { name:'Pooja Iyer', stars:5, verified:true, text:'Passed the certification on the first attempt using just this course and the practice tests.' },
+      { name:'Manish Gupta', stars:5, verified:true, text:'IAM lesson alone cleared up something that had confused me for a year.' }
+    ]
+  },
+  'terraform-iac': {
+    title:'Terraform Infrastructure as Code', category:'Cloud', level:'Intermediate', hours:'8h 20m', enrolled:'7,215',
+    instructor:'Divya Menon', instructorInit:'DM', instructorGrad:'linear-gradient(135deg,#10B981,#06B6D4)',
+    thumbGrad:'linear-gradient(135deg,#10B981,#06B6D4)',
+    desc:'Stop clicking through consoles — define infrastructure as versioned, reviewable code, and provision a real environment from scratch.',
+    modules:[
+      { title:'Terraform basics', lessons:[
+        { id:'tf1', name:'Providers, resources, and state', time:'17m', html:`<span class="lesson-eyebrow">Module 1 · Terraform basics</span><h2>Providers, resources, and state</h2><p>Understand the state file — the single most misunderstood part of Terraform, and why it matters.</p>` },
+        { id:'tf2', name:'Writing your first module', time:'21m', html:`<span class="lesson-eyebrow">Module 1 · Terraform basics</span><h2>Writing your first module</h2><p>Package a reusable piece of infrastructure so your team stops copy-pasting HCL.</p>` }
+      ]}
+    ],
+    reviews:[
+      { name:'Siddharth Rao', stars:4, verified:true, text:'Clear explanation of state locking that most tutorials skip entirely.' }
+    ]
+  },
+  'erpnext-automation': {
+    title:'ERPNext for Business Automation', category:'ERPNext', level:'Beginner', hours:'10h 45m', enrolled:'5,320',
+    instructor:'Meera Joshi', instructorInit:'MJ', instructorGrad:'linear-gradient(135deg,#10B981,#2563EB)',
+    thumbGrad:'linear-gradient(135deg,#059669,#2563EB)',
+    desc:'Set up CRM, HRMS, and manufacturing workflows on the Frappe framework — built around a real small-business case study end to end.',
+    modules:[
+      { title:'Getting started with Frappe', lessons:[
+        { id:'e1', name:'Installing ERPNext and first setup', time:'14m', html:`<span class="lesson-eyebrow">Module 1 · Getting started with Frappe</span><h2>Installing ERPNext and first setup</h2><p>Get a working instance running and understand doctypes — the core building block of the framework.</p>` },
+        { id:'e2', name:'Building a CRM pipeline', time:'19m', html:`<span class="lesson-eyebrow">Module 1 · Getting started with Frappe</span><h2>Building a CRM pipeline</h2><p>Model leads, opportunities, and deals for a real small business, from first contact to close.</p>` }
+      ]},
+      { title:'HR & manufacturing', lessons:[
+        { id:'e3', name:'HRMS: attendance and payroll basics', time:'20m', html:`<span class="lesson-eyebrow">Module 2 · HR & manufacturing</span><h2>HRMS: attendance and payroll basics</h2><p>Configure attendance tracking and run a first payroll cycle end to end.</p>` }
+      ]}
+    ],
+    reviews:[
+      { name:'Harsh Patel', stars:5, verified:true, text:"Set up ERPNext for my father's manufacturing business using exactly this course. Saved us a consultant fee." }
     ]
   }
 };
@@ -342,6 +506,9 @@ async function render(){
   if(name === 'course' && param){
     app.innerHTML = await renderCoursePage(param);
     wireCoursePage(param);
+  } else if(name === 'courses'){
+    app.innerHTML = renderCoursesPage();
+    wireCoursesPage();
   } else if(name === 'dashboard'){
     app.innerHTML = await renderDashboard();
     wireDashboard();
@@ -393,7 +560,7 @@ function renderHome(){
 
   <section>
     <div class="wrap">
-      <div class="section-head"><div><h2>Trending this week</h2><p class="section-sub">Click a course to view the full curriculum.</p></div></div>
+      <div class="section-head"><div><h2>Trending this week</h2><p class="section-sub">Click a course to view the full curriculum.</p></div><a class="see-all" data-route="courses" href="#courses">Browse all ${Object.keys(courseCatalog).length} courses →</a></div>
       <div class="course-grid" id="homeCourseGrid"></div>
     </div>
   </section>`;
@@ -402,7 +569,8 @@ function renderHome(){
 async function wireHome(){
   const enrollments = await getEnrollments();
   const grid = document.getElementById('homeCourseGrid');
-  grid.innerHTML = Object.entries(courseCatalog).map(([id, c]) => {
+  const featured = ['dsa-python','agentic-ai','k8s-prod'];
+  grid.innerHTML = featured.map(id => [id, courseCatalog[id]]).map(([id, c]) => {
     const isEnrolled = !!enrollments[id];
     return `
     <div class="course-card" data-nav="course/${id}">
@@ -414,6 +582,89 @@ async function wireHome(){
         <h3>${c.title}</h3>
         <p>${c.desc.slice(0,80)}...</p>
         <div class="course-meta"><span>${c.modules.reduce((a,m)=>a+m.lessons.length,0)} lessons</span><span>${isEnrolled ? 'Enrolled ✓' : c.hours}</span></div>
+      </div>
+    </div>`;
+  }).join('');
+  grid.querySelectorAll('[data-nav]').forEach(el => {
+    el.addEventListener('click', () => { location.hash = '#' + el.dataset.nav; });
+  });
+}
+
+/* ---------------- ALL COURSES ---------------- */
+let coursesFilterState = { category:'All', level:'All', search:'' };
+
+function renderCoursesPage(){
+  return `
+  <div class="wrap" style="padding:36px 0 60px;">
+    <div class="dash-head" style="padding-top:0;">
+      <div>
+        <h2>All courses</h2>
+        <p class="section-sub" style="margin-top:6px;">${Object.keys(courseCatalog).length} free courses across programming, AI, cloud, and ERPNext.</p>
+      </div>
+    </div>
+    <div style="display:flex; gap:10px; flex-wrap:wrap; margin:24px 0 10px;" id="categoryFilters"></div>
+    <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-bottom:26px;">
+      <select id="levelFilter" style="background:var(--surface); color:var(--text); border:1px solid var(--border-strong); border-radius:10px; padding:9px 14px; font-family:var(--font-body); font-size:13.5px;">
+        <option value="All">All levels</option>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
+      </select>
+      <input type="text" id="searchFilter" placeholder="Search courses..." style="flex:1; min-width:200px; background:var(--surface); color:var(--text); border:1px solid var(--border-strong); border-radius:10px; padding:9px 14px; font-family:var(--font-body); font-size:13.5px; outline:none;">
+    </div>
+    <div id="resultCount" style="font-size:12.5px; color:var(--text-mute); font-family:var(--font-mono); margin-bottom:16px;"></div>
+    <div class="course-grid" id="allCoursesGrid"></div>
+  </div>`;
+}
+
+async function wireCoursesPage(){
+  const categories = ['All', ...new Set(Object.values(courseCatalog).map(c => c.category))];
+  const catEl = document.getElementById('categoryFilters');
+  catEl.innerHTML = categories.map(cat =>
+    `<button class="btn ${coursesFilterState.category===cat?'btn-primary':''}" data-cat="${cat}">${cat}</button>`
+  ).join('');
+  catEl.querySelectorAll('[data-cat]').forEach(b => {
+    b.addEventListener('click', () => { coursesFilterState.category = b.dataset.cat; wireCoursesPage(); });
+  });
+
+  document.getElementById('levelFilter').value = coursesFilterState.level;
+  document.getElementById('levelFilter').addEventListener('change', (e) => {
+    coursesFilterState.level = e.target.value; renderFilteredGrid();
+  });
+  document.getElementById('searchFilter').value = coursesFilterState.search;
+  document.getElementById('searchFilter').addEventListener('input', (e) => {
+    coursesFilterState.search = e.target.value; renderFilteredGrid();
+  });
+
+  await renderFilteredGrid();
+}
+
+async function renderFilteredGrid(){
+  const enrollments = await getEnrollments();
+  const entries = Object.entries(courseCatalog).filter(([id, c]) => {
+    const catOk = coursesFilterState.category === 'All' || c.category === coursesFilterState.category;
+    const lvlOk = coursesFilterState.level === 'All' || c.level === coursesFilterState.level;
+    const searchOk = !coursesFilterState.search || c.title.toLowerCase().includes(coursesFilterState.search.toLowerCase());
+    return catOk && lvlOk && searchOk;
+  });
+  document.getElementById('resultCount').textContent = `${entries.length} course${entries.length===1?'':'s'} found`;
+  const grid = document.getElementById('allCoursesGrid');
+  if(entries.length === 0){
+    grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1;"><div class="ic">🔍</div><h3>No courses match</h3><p>Try a different category, level, or search term.</p></div>`;
+    return;
+  }
+  grid.innerHTML = entries.map(([id, c]) => {
+    const isEnrolled = !!enrollments[id];
+    return `
+    <div class="course-card" data-nav="course/${id}">
+      <div class="course-thumb" style="background:${c.thumbGrad};">
+        <span class="lvl">${c.level}</span>
+        ${!isEnrolled ? '<span class="lock">🔒</span>' : '<span class="enroll-badge">Enrolled</span>'}
+      </div>
+      <div class="course-body">
+        <h3>${c.title}</h3>
+        <p>${c.desc.slice(0,80)}...</p>
+        <div class="course-meta"><span>${c.category}</span><span>${flatLessons(c).length} lessons · ${c.hours}</span></div>
       </div>
     </div>`;
   }).join('');
@@ -435,7 +686,7 @@ async function renderCoursePage(courseId){
   return `
   <section class="course-hero">
     <div class="wrap">
-      <div class="breadcrumb"><a data-route="home" href="#home">Home</a> / ${course.title}</div>
+      <div class="breadcrumb"><a data-route="home" href="#home">Home</a> / <a data-route="courses" href="#courses">${course.category}</a> / ${course.title}</div>
       <h1>${course.title}</h1>
       <p class="desc">${course.desc}</p>
       <div class="meta-row">
